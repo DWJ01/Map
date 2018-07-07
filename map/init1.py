@@ -17,6 +17,8 @@ def map():
 	latitude1 = request.form['latitude1']
 	longitude2 = request.form['longitude2']
 	latitude2 = request.form['latitude2']
+	vendor = request.form['vendor']
+	vendor = int(vendor)
 	date = request.form['date']
 	hour = request.form['hour']
 	minute = request.form['minute']
