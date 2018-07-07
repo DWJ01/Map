@@ -2,6 +2,9 @@
 from flask import Flask, render_template, request, session, url_for, redirect
 from datetime import date
 import holidays
+import numpy as np
+import pickle
+from keras.models import load_model
 
 #Initialize the app from Flask
 app = Flask(__name__)
@@ -19,7 +22,7 @@ def map():
 	latitude2 = request.form['latitude2']
 	vendor = request.form['vendor']
 	vendor = int(vendor)
-	date = request.form['date']
+	date = request.form['datepicker']
 	hour = request.form['hour']
 	minute = request.form['minute']
 	def isPeak(hour):
@@ -35,8 +38,46 @@ def map():
 			return 0
 	ispeak = isPeak(hour)
 	isholiday = isHoliday(date)
-	if (longitude1 and latitude1):
-		return render_template('index.html',data = longitude1, ispeak = ispeak, isholiday = isholiday)
+
+
+	
+	infile = open('/Users/duanwujie/Desktop/Map-project/map/archive.dat','rb')
+	dic = pickle.load(infile)
+	mean = dic['mean']
+	std = dic['std']
+
+	temp = date.split('/')
+	month = int(temp[0])
+	day = int(temp[1])
+	hour = int(hour)
+	if hour >= 0 and hour < 6:
+	    hour = 0
+	elif hour >= 6 and hour < 12:
+	    hour = 1
+	elif hour >= 12 and hour < 18:
+	    hour = 2
+	elif hour >= 18 and hour < 24:
+	    hour = 3
+	lon1 = float(longitude1)
+	lat1 = float(latitude1)
+	lon2 = float(longitude2)
+	lat2 = float(latitude2)
+
+	
+	sample = np.array([[month,day,hour,vendor,lon1,lat1,lon2,lat2,ispeak,isholiday]])
+	#sample = np.array([[3,25,2,2,-73.98300171,40.7557106,-73.97595978,40.76294327,0,0]])
+	#print(sample.shape)
+	sample_nor = (sample-mean)/std
+	#print(sample_nor)
+	
+	model = load_model('/Users/duanwujie/Desktop/Map-project/map/my_model_1.h5')
+	pre = model.predict(sample_nor)
+	pre = str(pre[0][0])
+
+
+
+	if (pre):
+		return render_template('index.html',data = pre)
 
 #Run the app on localhost port 5000
 #debug = True -> you don't have to restart flask
