@@ -1,0 +1,94 @@
+html,body{
+    background-color: white;
+}
+#screen{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+#googleMap{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+#form{
+    z-index: 2;
+    top: 0%;
+    position: absolute;
+    width: 100%;
+}
+#date{
+    z-index: 2;
+    width: 21%;
+    /* margin: 0px; */
+    position: absolute;
+    left: 60%;
+    top: -7%;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+#datepicker{
+    height: 30px;
+    width: 150px;
+    font-size: 18;
+}
+#time{
+    z-index: 2;
+    width: 22%;
+    top: -7%;
+    right: 2%;
+    position: absolute;
+    font-size: 18;
+}
+#hour{
+    height: 30px;
+    width: 50px;
+    font-size: 18;
+}
+#minute{
+    height: 30px;
+    background-color: white;
+    color: black;
+    width: 50px;
+    font-size: 18;
+}
+#submit{
+    z-index: 3;
+    top: 10%;
+    right: 4%;
+    position: absolute;
+    color: white;
+    height: 33px;
+    width: 7%;
+    background-color: orange;
+    font-size: 18;
+    font-family: sans-serif;
+}
+#submit:hover{
+    cursor: pointer;
+    background-color: blue;
+}
+#longitude1{
+    z-index: 2;
+}
+#latitude1{
+    z-index: 2;
+}
+#longitude2{
+    z-index: 2;
+}
+#latitude2{
+    z-index: 2;
+}
+#result{
+    z-index: 3;
+    top: 27%;
+    position: absolute;
+    /* text-align: center; */
+    left: 24%;
+    background-color: orange;
+    height: 20%;
+    width: 40%;
+    text-align: center;
+    padding: 64px;
+}
