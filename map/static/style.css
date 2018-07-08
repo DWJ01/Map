@@ -1,5 +1,31 @@
 html,body{
     background-color: white;
+    text-align: center;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 188px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* 定位 */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 #screen{
     width: 100%;
@@ -22,13 +48,13 @@ html,body{
     width: 21%;
     /* margin: 0px; */
     position: absolute;
-    left: 58%;
+    left: 54%;
     top: -7%;
     font-size: 20px;
     font-family: sans-serif;
 }
 #datepicker{
-    height: 27px;
+    height: 30px;
     width: 146px;
     font-size: 18;
 }
@@ -36,18 +62,18 @@ html,body{
     z-index: 2;
     width: 22%;
     top: -7%;
-    right: 3%;
+    right: 9%;
     position: absolute;
     font-size: 20px;
     font-family: sans-serif;
 }
 #hour{
-    height: 27px;
+    height: 30px;
     width: 50px;
     font-size: 18;
 }
 #minute{
-    height: 27px;
+    height: 30px;
     background-color: white;
     color: black;
     width: 50px;
@@ -55,7 +81,7 @@ html,body{
 }
 #submit{
     z-index: 3;
-    top: 13%;
+    top: 15%;
     right: 4%;
     position: absolute;
     color: white;
@@ -71,24 +97,31 @@ html,body{
 }
 #vendor{
     z-index: 3;
-    height: 27px;
-    width: 100px;
+    height: 30px;
+    width: 215px;
     font-size: 18;
-    top: 20%;
-    left: 52%;
+    top: -5%;
+    left: 40%;
     position: absolute;
 }
+#vendortext{
+    
+}
 #longitude1{
-    z-index: 2;
+    z-index: 0;
+    visibility: hidden;
 }
 #latitude1{
-    z-index: 2;
+    z-index: 0;
+    visibility: hidden;
 }
 #longitude2{
-    z-index: 2;
+    z-index: 0;
+    visibility: hidden;
 }
 #latitude2{
-    z-index: 2;
+    z-index: 0;
+    visibility: hidden;
 }
 #result{
     z-index: 3;
@@ -101,12 +134,35 @@ html,body{
     width: 40%;
     text-align: center;
     padding: 64px;
+    opacity: 0.8;
+}
+#close{
+    z-index: 4;
+    top: 26%;
+    position: absolute;
+    height: 15%;
+    right: 27%;
+}
+#close:hover{
+    cursor: pointer;
+}
+#list{
+    height: 30px;
 }
 #upbar {
     z-index: 2;
     top: 0%;
     height: 60;
     position: absolute;
-    width: 100%;
+    width: 88%;
     background: rgba(0,0,0,0.2);
+    left: 9%;
+    right: 5%;
+}
+#logo{
+    z-index: 3;
+    top: -2%;
+    position: absolute;
+    height: 18%;
+    left: 10%;
 }
