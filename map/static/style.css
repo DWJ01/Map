@@ -38,7 +38,8 @@ html,body{
     top: -7%;
     right: 3%;
     position: absolute;
-    font-size: 18;
+    font-size: 20px;
+    font-family: sans-serif;
 }
 #hour{
     height: 27px;
@@ -66,7 +67,7 @@ html,body{
 }
 #submit:hover{
     cursor: pointer;
-    background-color: blue;
+    background-color: #FF7F00;
 }
 #vendor{
     z-index: 3;
@@ -107,5 +108,5 @@ html,body{
     height: 60;
     position: absolute;
     width: 100%;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.2);
 }
