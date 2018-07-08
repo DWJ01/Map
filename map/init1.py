@@ -70,7 +70,7 @@ def map():
 	sample_nor = (sample-mean)/std
 	#print(sample_nor)
 	
-	model = load_model('/Users/duanwujie/Desktop/Map-project/map/my_model_1.h5')
+	model = load_model('/Users/duanwujie/Desktop/Map-project/map/my_model_7.h5')
 	pre = model.predict(sample_nor)
 	pre = str(pre[0][0])
 
