@@ -96,7 +96,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <input type="submit" id="submit" value = Submit />
 </form>
 {% if data %}
-    <div id="result"><strong>Trip Duration Time is:</strong> {{data}}</div>
+    <div id="result"><strong>The First Location is: </strong><br>{{lon1,lat1}}<br><strong>The Second Location is: </strong><br>{{lon2,lat2}}<strong><br><br>Trip Duration Time is:</strong> {{data}} <strong>Minutes</strong></div>
     <img src="{{ url_for('static', filename='images/closingtab.png') }}" id="close" onclick="infoclose()">
 {% endif %}
 </div>

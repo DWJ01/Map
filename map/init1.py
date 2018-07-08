@@ -72,12 +72,11 @@ def map():
 	
 	model = load_model('/Users/duanwujie/Desktop/Map-project/map/my_model_7.h5')
 	pre = model.predict(sample_nor)
-	pre = str(pre[0][0])
-
+	pre = str(pre[0][0]/60)
 
 
 	if (pre):
-		return render_template('index.html',data = pre)
+		return render_template('index.html',data = pre, lon1 = longitude1, lat1 = latitude1, lon2 = longitude2, lat2 = latitude2)
 
 #Run the app on localhost port 5000
 #debug = True -> you don't have to restart flask

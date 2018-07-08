@@ -97,7 +97,7 @@ html,body{
 }
 #vendor{
     z-index: 3;
-    height: 30px;
+    height: 52px;
     width: 215px;
     font-size: 20px;
     top: -7%;
@@ -131,11 +131,12 @@ html,body{
     /* text-align: center; */
     left: 24%;
     background-color: orange;
-    height: 20%;
+    height: 22%;
     width: 40%;
     text-align: center;
     padding: 64px;
     opacity: 0.8;
+    font-size: 20px;
 }
 #close{
     z-index: 4;
