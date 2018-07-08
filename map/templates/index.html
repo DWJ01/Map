@@ -78,7 +78,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <img src="{{ url_for('static', filename='images/404.png') }}" id="logo">
 <form action="/map" method="POST" id="form">
   <p id="date" class="tooltip">Date:  <input type="text" id="datepicker" name = "datepicker" placeholder = "MM/DD/YYYY" required/><span class="tooltiptext">Enter Pickup Date</span></p>
-  <p id="time" class="tooltip">Time:  <input type="text" id="hour" name = "hour" placeholder = "24" required/> : <input type="text" id="minute" name = "minute" placeholder = "24" required/><span class="tooltiptext">Enter Pickup Time (Hour:Minute) </span></p>
+  <p id="time" class="tooltip">Time:  <input type="text" id="hour" name = "hour" placeholder = "24" required/> : <input type="text" id="minute" name = "minute" placeholder = "60" required/><span class="tooltiptext">Enter Pickup Time (Hour:Minute) </span></p>
   <div class="tooltip" id="vendor">
   <p id="vendortext">Vendor:  
   <input list="vendor1" name="vendor" id = "list" placeholder = "VENDOR NAME" required/>
