@@ -41,7 +41,7 @@ def map():
 
 
 	
-	infile = open('/Users/duanwujie/Desktop/Map-project/map/archive.dat','rb')
+	infile = open('/Users/duanwujie/Desktop/Map-project/map/static/archive.dat','rb')
 	dic = pickle.load(infile)
 	mean = dic['mean']
 	std = dic['std']
@@ -70,13 +70,17 @@ def map():
 	sample_nor = (sample-mean)/std
 	#print(sample_nor)
 	
-	model = load_model('/Users/duanwujie/Desktop/Map-project/map/my_model_7.h5')
+	model = load_model('/Users/duanwujie/Desktop/Map-project/map/static/my_model_7.h5')
 	pre = model.predict(sample_nor)
-	pre = str(pre[0][0]/60)
+	pre = pre[0][0]
+	prem = int(pre//60)
+	pres = int(pre % 60)
+	prem = str(prem)
+	pres = str(pres)
 
 
 	if (pre):
-		return render_template('index.html',data = pre, lon1 = longitude1, lat1 = latitude1, lon2 = longitude2, lat2 = latitude2)
+		return render_template('index.html',data = prem, data1 = pres, lon1 = longitude1, lat1 = latitude1, lon2 = longitude2, lat2 = latitude2)
 
 #Run the app on localhost port 5000
 #debug = True -> you don't have to restart flask
